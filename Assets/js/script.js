@@ -1,14 +1,19 @@
+// create array of Uppercase letters
+const upperCaseArray = Array.from("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+
+// create array of Lowercase letters
+const lowerCaseArray = Array.from("abcdefghijklmnopqrstuvwxyz");
+
+// create array of single digit numerics
+const numericArray = [0,1,2,3,4,5,6,7,8,9];
+
+// create array of special characters
+const specialCharArray = Array.from("!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~");
 
 // function to generate a random numeric value
 var randomNumber = function(num) {
   var value = Math.floor(Math.random() * num);
-
   return value;
-};
-
-//function to check if generated password match the criteria
-var validateGeneratedPassword = function(checkThisPassword){
-  
 };
 
 // function to prompt password length
@@ -17,8 +22,7 @@ var getPassLength =  function() {
   var length = 0;
 
   // loop until length input is within 8 to 128 characters and is not empty space nor null
-  while (length < 8 || length > 128 || tempLength === "" || tempLength === null) {
-      
+  while (length < 8 || length > 128 || tempLength === "" || tempLength === null) { 
     var tempLength = prompt("Password Length? (At least 8 characters but no more than 128 characters)");
     length = parseInt(tempLength);
   }
@@ -28,7 +32,6 @@ var getPassLength =  function() {
 
 // function to prompt password criteria
 var generatePassCrit = function(){
-  
   // set critSelect as true to go into while loop
   var critSelect = true;
   
@@ -57,23 +60,10 @@ var generatePassCrit = function(){
 
 // function to generate password
 var generatePassword = function() {
-  
   var passwordCriteria = generatePassCrit();
   
   // create empty password character array
   var passwordCharArray = [];
-  
-  // create array of Uppercase letters
-  const upperCaseArray = Array.from("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-
-  // create array of Lowercase letters
-  const lowerCaseArray = Array.from("abcdefghijklmnopqrstuvwxyz");
-
-  // create array of single digit numerics
-  const numericArray = [0,1,2,3,4,5,6,7,8,9];
-
-  // create array of special characters
-  const specialCharArray = Array.from("!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~");
 
   // add the desired number of random characters to passwordCharArray base on the criteria
   for(var i = 0; i < passwordCriteria.length; i++){
@@ -117,9 +107,7 @@ var generatePassword = function() {
 
   let generatedPassword = passwordCharArray.toString();
 
-  
   return generatedPassword;
-
 }
 
 // Get references to the #generate element
@@ -133,8 +121,6 @@ function writePassword() {
 
   passwordText.value = password;
 };
-
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
