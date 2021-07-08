@@ -22,7 +22,7 @@ var getPassLength =  function() {
   var length = 0;
 
   // loop until length input is within 8 to 128 characters and is not empty space nor null
-  while (length < 8 || length > 128 || tempLength === "" || tempLength === null) { 
+  while (length < 8 || length > 128 || tempLength === "" || tempLength === null || isNaN(length)) { 
     var tempLength = prompt("Password Length? (At least 8 characters but no more than 128 characters)");
     length = parseInt(tempLength);
   }
